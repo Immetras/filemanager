@@ -4,6 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filemanager</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script>
+      function show(){ document.getElementById("popup").showModal() } function
+      hide(){ document.getElementById('popup').close() }
+
+    </script>
   </head>
   <body>
     <header>
@@ -11,17 +16,17 @@
     </header>
 
     <nav>
-      <button class="button">nowy folder</button>
-      <button class="button">nowy plik tekstowy</button>
+      <button onclick="show()" class="button">new folder</button>
+      <button id="text" class="button">new text file</button>
       <div class="button" id="upload"></div>
     </nav>
 
-    <div hidden id="popup">
-      <p>nazwa nowego folderu w </p>
+    <dialog id="popup">
+      <p>new folder name </p>
       <input type="text" name="folder" />
-      <button>ok</button>
-      <button>cancel</button>
-    </div>
+      <button onclick="send()">ok</button>
+      <button onclick="hide()">cancel</button>
+    </dialog>
 
     <div id="body">
       {{{body}}}
